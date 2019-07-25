@@ -14,7 +14,7 @@ class CrearTablaLibroprestamo extends Migration
     public function up()
     {
         Schema::create('libro_prestamo', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->unsignedInteger('usuario_id');
             $table->foreign('usuario_id','fk_libroprestamo_usuario')->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
             $table->unsignedInteger('libro_id');
